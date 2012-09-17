@@ -7,8 +7,7 @@
 class Javinstall : public QThread
 {
     Q_OBJECT
-signals:
-    // ...
+
 public:
     Javinstall();
 
