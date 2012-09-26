@@ -1,4 +1,4 @@
-Most Linux distributions come with some form of OpenJDK installed, but if you want to use the real Java, you have to go to the trouble of manually installing it. Unless, of course, you let Javinstall take care of this for you. Javinstall is a customized graphical installer that makes installing Oracle's Java platform in Linux extremely easy.
+Most Linux distributions come with some form of OpenJDK installed, but if you want to use the real Java you have to go to the trouble of manually installing it. Unless, of course, you let Javinstall take care of this for you. Javinstall is a customized graphical installer that makes installing Oracle's Java platform in Linux extremely easy.
 
 Download the latest stable executable version at http://sites.google.com/site/javinstall.
 
