@@ -51,12 +51,6 @@ void Window::on_installButton_clicked()
 
 void Window::when_thread_done() {
     // Reverse the chronological order of if-statements to prevent running more than one.
-
-    if (javin.get_op() == "uninstall") {
-        ui->progressBar->setValue(100);
-        ui->statusLabel->setText("Uninstalled.");
-    }
-
     if (javin.get_op() == "install") {
         ui->progressBar->setValue(100);
         ui->statusLabel->setText("Done.");
