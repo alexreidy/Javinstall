@@ -1,3 +1,9 @@
+/* Window class definition
+** Manages primary UI and functionality
+** Copyright (C) 2012 Alex Reidy
+** License: MIT
+*/
+
 #include "window.h"
 #include "ui_window.h"
 #include "javinstall.h"
