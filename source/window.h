@@ -1,3 +1,9 @@
+/* Window class declaration
+** Manages primary UI and functionality
+** Copyright (C) 2012 Alex Reidy
+** License: MIT
+*/
+
 #ifndef WINDOW_H
 #define WINDOW_H
 

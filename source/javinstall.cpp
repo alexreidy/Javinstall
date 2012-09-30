@@ -1,3 +1,9 @@
+/* Javinstall class definition
+** Manages download, extraction, installation, etc.
+** Copyright (C) 2012 Alex Reidy
+** License: MIT
+*/
+
 #include "javinstall.h"
 #include <stdlib.h>
 #include <fstream>

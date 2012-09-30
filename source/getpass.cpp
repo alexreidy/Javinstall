@@ -1,3 +1,9 @@
+/* GetPass class definition
+** Gets the root password from user
+** Copyright (C) 2012 Alex Reidy
+** License: MIT
+*/
+
 #include "getpass.h"
 #include "ui_getpass.h"
 

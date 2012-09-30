@@ -1,3 +1,9 @@
+/* Javinstall class declaration
+** Manages download, extraction, installation, etc.
+** Copyright (C) 2012 Alex Reidy
+** License: MIT
+*/
+
 #ifndef JAVINSTALL_H
 #define JAVINSTALL_H
 

@@ -1,3 +1,9 @@
+/* GetPass class declaration
+** Gets the root password from user
+** Copyright (C) 2012 Alex Reidy
+** License: MIT
+*/
+
 #ifndef GETPASS_H
 #define GETPASS_H
 
