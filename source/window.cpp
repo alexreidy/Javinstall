@@ -56,11 +56,23 @@ void Window::on_installButton_clicked()
 }
 
 void Window::when_thread_done() {
-    // Reverse the chronological order of if-statements to prevent running more than one.
+    // Reverse the chronological order of conditionals to prevent running more than one.
+    if (javin.get_op() == "install_browser_plugin") {
+    	ui->progressBar->setValue(100);
+    	ui->statusLabel->setText("Done.");
+    }
+    
     if (javin.get_op() == "install") {
-        ui->progressBar->setValue(100);
-        ui->statusLabel->setText("Done.");
-        ui->installButton->setEnabled(true);
+        if (version_choice == 0) {
+        	ui->progressBar->setValue(95);
+        	ui->statusLabel->setText("Configuring browser plugin...");
+        	javin.set_op("install_browser_plugin");
+        	javin.start();
+        } else {
+        	ui->progressBar->setValue(100);
+            ui->statusLabel->setText("Done.");
+        	ui->installButton->setEnabled(true);
+        }
     }
 
     if (javin.get_op() == "extract") {
