@@ -65,13 +65,13 @@ void Window::when_thread_done() {
     if (javin.get_op() == "install") {
         if (version_choice == 0) {
         	ui->progressBar->setValue(95);
-        	ui->statusLabel->setText("Configuring browser plugin...");
-        	javin.set_op("install_browser_plugin");
-        	javin.start();
+            ui->statusLabel->setText("Configuring browser plugin...");
+            javin.set_op("install_browser_plugin");
+            javin.start();
         } else {
-        	ui->progressBar->setValue(100);
+            ui->progressBar->setValue(100);
             ui->statusLabel->setText("Done.");
-        	ui->installButton->setEnabled(true);
+            ui->installButton->setEnabled(true);
         }
     }
 

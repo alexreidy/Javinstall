@@ -148,10 +148,10 @@ void Javinstall::run() {
     }
     
     if (Javinstall::operation == "install_browser_plugin") {
-		if (Javinstall:architecture == "32-bit")
-			system("ln -s /opt/jre/lib/i386/libnpjp2.so /usr/lib/firefox/plugins/");
+	    if (Javinstall:architecture == "32-bit")
+	        system("ln -s /opt/jre/lib/i386/libnpjp2.so /usr/lib/firefox/plugins/");
 		
-		if (Javinstall::architecture == "64-bit")
-			system("ln -s /opt/jre/lib/amd64/libnpjp2.so /usr/lib/firefox/plugins/");
+	    if (Javinstall::architecture == "64-bit")
+	        system("ln -s /opt/jre/lib/amd64/libnpjp2.so /usr/lib/firefox/plugins/");
     }
 }
