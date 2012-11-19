@@ -9,34 +9,34 @@
 #include <fstream>
 
 Javinstall::Javinstall() {
-    Javinstall::password = "";
+    password = "";
 }
 
 void Javinstall::set_choices(int version, QString arch) {
-    Javinstall::version_choice = version;
-    Javinstall::architecture = arch;
+    version_choice = version;
+    architecture = arch;
 }
 
 // Set operation equal to the specified task for the thread:
 void Javinstall::set_op(QString task) {
-    Javinstall::operation = task;
+    operation = task;
 }
 
 QString Javinstall::get_op() {
-    return Javinstall::operation;
+    return operation;
 }
 
 void Javinstall::setPass(QString pass) {
-    Javinstall::password = pass;
+    password = pass;
 }
 
 void Javinstall::run() {
-    if (Javinstall::operation == "download") {
+    if (operation == "download") {
         // Cookie information passed as the header is probably subject to change:
         QString header = "--header 'Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjre7-downloads-1637588.html' ";
         QString url;
-        if (Javinstall::architecture == "32-bit") {
-            switch(Javinstall::version_choice) {
+        if (architecture == "32-bit") {
+            switch(version_choice) {
                 case 0: // JRE
                     url = "http://download.oracle.com/otn-pub/java/jdk/7u5-b06/jre-7u5-linux-i586.tar.gz";
                     break;
@@ -44,8 +44,8 @@ void Javinstall::run() {
                     url = "http://download.oracle.com/otn-pub/java/jdk/7u5-b06/jdk-7u5-linux-i586.tar.gz";
                     break;
             }
-        } else if (Javinstall::architecture == "64-bit")  {
-            switch(Javinstall::version_choice) {
+        } else if (architecture == "64-bit")  {
+            switch(version_choice) {
                 case 0: // JRE
                     url = "http://download.oracle.com/otn-pub/java/jdk/7u5-b06/jre-7u5-linux-x64.tar.gz";
                     break;
@@ -60,10 +60,10 @@ void Javinstall::run() {
         system(str_cmd.toStdString().c_str());
     }
 
-    if (Javinstall::operation == "extract") {
+    if (operation == "extract") {
         QString fname;
-        if (Javinstall::architecture == "32-bit") {
-            switch(Javinstall::version_choice) {
+        if (architecture == "32-bit") {
+            switch(version_choice) {
                 case 0: // JRE
                     fname = "jre-7u5-linux-i586.tar.gz";
                     break;
@@ -71,8 +71,8 @@ void Javinstall::run() {
                     fname = "jdk-7u5-linux-i586.tar.gz";
                     break;
             }
-        } else if (Javinstall::architecture == "64-bit")  {
-            switch(Javinstall::version_choice) {
+        } else if (architecture == "64-bit")  {
+            switch(version_choice) {
                 case 0: // JRE
                     fname = "jre-7u5-linux-x64.tar.gz";
                     break;
@@ -88,10 +88,10 @@ void Javinstall::run() {
 
     }
 
-    if (Javinstall::operation == "install") {
+    if (operation == "install") {
         QString fname;
-        if (Javinstall::architecture == "32-bit") {
-            switch(Javinstall::version_choice) {
+        if (architecture == "32-bit") {
+            switch(version_choice) {
                 case 0: // JRE
                     fname = "jre1.7.0_05";
                     break;
@@ -99,8 +99,8 @@ void Javinstall::run() {
                     fname = "jdk1.7.0_05";
                     break;
             }
-        } else if (Javinstall::architecture == "64-bit")  {
-            switch(Javinstall::version_choice) {
+        } else if (architecture == "64-bit")  {
+            switch(version_choice) {
                 case 0: // JRE
                     fname = "jre1.7.0_05";
                     break;
@@ -112,10 +112,10 @@ void Javinstall::run() {
 
         QString str_cmd;
 
-        QString pass = Javinstall::password;
+        QString pass = password;
         QString command = "echo " + pass + " | sudo -S ";
 
-        if (Javinstall::version_choice == 0) { // JRE
+        if (version_choice == 0) { // JRE
             str_cmd = command + "mkdir /opt/jre";
             system(str_cmd.toStdString().c_str());
 
@@ -129,7 +129,7 @@ void Javinstall::run() {
             system(str_cmd.toStdString().c_str());
         }
 
-        if (Javinstall::version_choice == 1) { // JDK
+        if (version_choice == 1) { // JDK
             str_cmd = command + "mkdir /opt/jdk";
             system(str_cmd.toStdString().c_str());
 
@@ -147,11 +147,11 @@ void Javinstall::run() {
 
     }
     
-    if (Javinstall::operation == "install_browser_plugin") {
-	    if (Javinstall:architecture == "32-bit")
+    if (operation == "install_browser_plugin") {
+	    if (architecture == "32-bit")
 	        system("ln -s /opt/jre/lib/i386/libnpjp2.so /usr/lib/firefox/plugins/");
 		
-	    if (Javinstall::architecture == "64-bit")
+	    if (architecture == "64-bit")
 	        system("ln -s /opt/jre/lib/amd64/libnpjp2.so /usr/lib/firefox/plugins/");
     }
 }
