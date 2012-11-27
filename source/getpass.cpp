@@ -21,12 +21,12 @@ GetPass::~GetPass()
 
 // Allows the Window object access to password:
 QString GetPass::get_pass() {
-    return GetPass::password;
+    return password;
 }
 
 void GetPass::on_buttonBox_accepted()
 {
-    GetPass::password = ui->lineEdit->text();
+    password = ui->lineEdit->text();
 }
 
 void GetPass::on_buttonBox_rejected()

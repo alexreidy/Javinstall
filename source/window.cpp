@@ -25,10 +25,10 @@ Javinstall javin;
 // On button click, install chosen Java software:
 void Window::on_installButton_clicked()
 {
-    Window::getPass.setWindowTitle("Grant Javinstall root access");
-    Window::getPass.show();
-    Window::getPass.activateWindow();
-    Window::getPass.raise();
+    getPass.setWindowTitle("Grant Javinstall root access");
+    getPass.show();
+    getPass.activateWindow();
+    getPass.raise();
 
     int version_choice = ui->installchoice_combobox->currentIndex();
     QString architecture = "none";
@@ -101,16 +101,16 @@ void Window::on_actionQuit_triggered()
 // Show about window:
 void Window::on_actionAbout_triggered()
 {
-    Window::about.setWindowTitle("About");
-    Window::about.show();
-    Window::about.activateWindow();
-    Window::about.raise();
+    about.setWindowTitle("About");
+    about.show();
+    about.activateWindow();
+    about.raise();
 }
 
 void Window::on_actionHelp_triggered()
 {
-    Window::help.setWindowTitle("Help");
-    Window::help.show();
-    Window::help.activateWindow();
-    Window::help.raise();
+    help.setWindowTitle("Help");
+    help.show();
+    help.activateWindow();
+    help.raise();
 }
